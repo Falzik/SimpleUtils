@@ -1,0 +1,4 @@
+name: SimpleUtils
+version: '1.0'
+main: me.falzik.api.SimpleUtils
+api-version: '1.21'
