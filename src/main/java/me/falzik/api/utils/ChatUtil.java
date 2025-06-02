@@ -70,7 +70,7 @@ public class ChatUtil {
     public static void setErrorPrefix(String errorPrefix) {
         ChatUtil.errorPrefix = translateCodes(errorPrefix);
     }
-    
+
     public static Logger getLogger() {
         return plugin.getLogger();
     }
