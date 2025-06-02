@@ -20,15 +20,31 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.2</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <relocations>
+                        <relocation>
+                            <pattern>fr.mrmicky.fastboard</pattern>
+                            <shadedPattern>me.falzik.league</shadedPattern>
+                        </relocation>
+                    </relocations>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                            <version>1.18.38</version>
-                        </path>
-                    </annotationProcessorPaths>
+                    <source>16</source>
+                    <target>16</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -50,12 +66,6 @@
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.21.4-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.38</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
