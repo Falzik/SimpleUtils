@@ -3,6 +3,7 @@ package me.falzik.api.utils;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.title.Title;
 import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -20,19 +21,19 @@ public class ChatUtil {
         return ChatColor.translateAlternateColorCodes('&', value);
     }
 
-    public static void sendMessage(Player player, String message) {
+    public static void sendMessage(CommandSender sender, String message) {
         if(prefix != null) {
-            player.sendMessage(translateCodes(prefix + message));
+            sender.sendMessage(translateCodes(prefix + message));
         } else {
-            player.sendMessage(translateCodes(message));
+            sender.sendMessage(translateCodes(message));
         }
     }
 
-    public static void sendErrorMessage(Player player, String message) {
+    public static void sendErrorMessage(CommandSender sender, String message) {
         if(errorPrefix != null) {
-            player.sendMessage(translateCodes(errorPrefix + message));
+            sender.sendMessage(translateCodes(errorPrefix + message));
         } else {
-            player.sendMessage(translateCodes(message));
+            sender.sendMessage(translateCodes(message));
             System.out.println(message + " (prefix is null!)");
         }
     }
