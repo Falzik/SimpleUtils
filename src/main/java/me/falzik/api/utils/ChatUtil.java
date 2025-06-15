@@ -91,7 +91,7 @@ public class ChatUtil {
 
     public static Object get(String configName, String path) {
         if(plugin == null) return null;
-        File file = new File(plugin.getDataFolder() + "/", path);
+        File file = new File(plugin.getDataFolder().getAbsolutePath() + "/", path);
         YamlConfiguration configuration = YamlConfiguration.loadConfiguration(file);
         return configuration.get(path);
     }
@@ -103,7 +103,7 @@ public class ChatUtil {
 
     public static void set(String configName, String path, Object object) {
         if(plugin == null) return;
-        File file = new File(plugin.getDataFolder() + "/", configName);
+        File file = new File(plugin.getDataFolder().getAbsolutePath() + "/", configName);
         YamlConfiguration yamlConfiguration = YamlConfiguration.loadConfiguration(file);
         yamlConfiguration.set(path, object);
         try {
