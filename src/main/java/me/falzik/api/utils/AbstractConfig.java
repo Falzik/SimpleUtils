@@ -14,15 +14,15 @@ public class AbstractConfig {
     private final static HashMap<String, YamlConfiguration> configByName = new HashMap<>();
 
     public void configSetup(String configName, JavaPlugin javaPlugin) {
-        File file = new File("plugins/" + javaPlugin.getName(), configName);
+        File file = new File(javaPlugin.getDataFolder().getAbsolutePath() + "/", configName);
         if(!file.exists()) {
             javaPlugin.saveResource(configName, false);
         }
         configByName.put(configName, YamlConfiguration.loadConfiguration(file));
     }
 
-    public void saveConfig(String configName, String pluginName) {
-        File file = new File("plugins/" + pluginName, configName);
+    public void saveConfig(String configName, JavaPlugin javaPlugin) {
+        File file = new File(javaPlugin.getDataFolder().getAbsolutePath() + "/", configName);
         try {
             getConfig(configName).save(file);
         } catch (IOException e) {
