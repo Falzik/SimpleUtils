@@ -1,4 +1,4 @@
-package me.falzik.api.utils;
+package me.falzik.api.util;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -7,9 +7,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 
-public class AbstractConfig {
+public class ConfigManager {
 
-    public static final AbstractConfig instance = new AbstractConfig();
+    public static final ConfigManager instance = new ConfigManager();
 
     private final static HashMap<String, YamlConfiguration> configByName = new HashMap<>();
 

@@ -1,4 +1,4 @@
-package me.falzik.api.utils;
+package me.falzik.api.util;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.title.Title;

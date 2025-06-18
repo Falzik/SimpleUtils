@@ -1,4 +1,4 @@
-package me.falzik.api.utils;
+package me.falzik.api.util;
 
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
